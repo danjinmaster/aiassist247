@@ -320,7 +320,7 @@ img {
 /* ===== Tools Grid ===== */
 .tools-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
     gap: 24px;
 }
 
@@ -370,6 +370,14 @@ img {
     font-size: 0.75rem;
     color: var(--primary-light);
     font-weight: 500;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+.tool-tag:hover {
+    background: rgba(99, 102, 241, 0.25);
+    border-color: var(--primary-light);
+    transform: translateY(-1px);
 }
 
 .card-link {
@@ -385,7 +393,7 @@ img {
 /* ===== Learn Grid ===== */
 .learn-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
     gap: 24px;
 }
 
@@ -458,10 +466,19 @@ img {
     color: var(--primary-light);
 }
 
+.learn-card li a {
+    color: var(--text-muted);
+    transition: color 0.3s;
+}
+
+.learn-card li a:hover {
+    color: var(--primary-light);
+}
+
 /* ===== News Grid ===== */
 .news-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
     gap: 24px;
 }
 
@@ -515,7 +532,7 @@ img {
 /* ===== Prompts Grid ===== */
 .prompts-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
     gap: 24px;
 }
 
@@ -823,21 +840,42 @@ img {
         display: flex;
     }
 
+    .nav-links a {
+        font-size: 1.05rem;
+        padding: 8px 0;
+    }
+
     .nav-toggle {
         display: flex;
     }
 
     .hero {
-        padding: 100px 24px 60px;
+        padding: 100px 16px 60px;
         min-height: auto;
     }
 
     .hero h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
     }
 
     .hero-stats {
         gap: 24px;
+    }
+
+    .section {
+        padding: 60px 0;
+    }
+
+    .section-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .container {
+        padding: 0 16px;
     }
 
     .tools-grid,
@@ -845,6 +883,12 @@ img {
     .news-grid,
     .prompts-grid {
         grid-template-columns: 1fr;
+    }
+
+    .tool-card,
+    .learn-card,
+    .prompt-card {
+        padding: 24px;
     }
 
     .about-grid {
@@ -861,9 +905,46 @@ img {
         flex-direction: column;
     }
 
+    .newsletter-form input,
+    .newsletter-form .btn {
+        width: 100%;
+        text-align: center;
+    }
+
     .hero-cta {
         flex-direction: column;
         align-items: center;
+    }
+
+    .hero-cta .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .prompt-box code {
+        font-size: 0.75rem;
+    }
+
+    .copy-btn {
+        width: 100%;
+        padding: 12px 16px;
+        font-size: 0.9rem;
+    }
+
+    .tool-tag {
+        padding: 6px 14px;
+        font-size: 0.8rem;
+    }
+
+    .btn-outline {
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        padding: 12px 24px;
+    }
+
+    .creator-card {
+        padding: 24px;
     }
 }
 
@@ -875,5 +956,17 @@ img {
     .hero-stats {
         flex-direction: column;
         gap: 16px;
+    }
+
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+
+    .stat-number {
+        font-size: 1.6rem;
+    }
+
+    .cta-content h2 {
+        font-size: 1.4rem;
     }
 }
