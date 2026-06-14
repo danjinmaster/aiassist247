@@ -346,6 +346,35 @@
                     </div>
                 </div>
             </div>
+            <!-- Creator Section -->
+            <div class="creator-section">
+                <div class="creator-card">
+                    <p class="creator-text">Created with <span class="heart">❤️</span> by <strong class="creator-name" id="creatorName">Alok</strong></p>
+                    <div class="creator-photo-wrapper" id="creatorPhoto">
+                        <img src="alok.png" alt="Alok - Creator" class="creator-photo">
+                    </div>
+                </div>
+            </div>
+            <script>
+                document.getElementById('creatorName').addEventListener('mouseenter', function() {
+                    document.getElementById('creatorPhoto').style.display = 'block';
+                });
+                document.getElementById('creatorName').addEventListener('mouseleave', function() {
+                    if (!document.getElementById('creatorPhoto').classList.contains('locked')) {
+                        document.getElementById('creatorPhoto').style.display = 'none';
+                    }
+                });
+                document.getElementById('creatorName').addEventListener('click', function() {
+                    var photo = document.getElementById('creatorPhoto');
+                    if (photo.classList.contains('locked')) {
+                        photo.classList.remove('locked');
+                        photo.style.display = 'none';
+                    } else {
+                        photo.classList.add('locked');
+                        photo.style.display = 'block';
+                    }
+                });
+            </script>
         </div>
     </section>
 
